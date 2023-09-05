@@ -1,7 +1,41 @@
+import os
+
 class Tuple_Class:
-    def __init__(self):
+    def __init__(self,main_obj):
         self.tuple_1 = (1,'h',3,4,5,3)
-    
+        self.main = main_obj
+
+        self.pick_panel()
+        
+    def pick_panel(self):
+        os.system('cls')
+
+        while True:
+            print("*-. Pick one .-*",end="\n\n") 
+            print("1. About ( t.tuple_one() )")
+            print("2. Tuples in loops ( t.tuple_two() )")
+            print("0. Go back",end="\n\n")
+            
+            try:
+                decision = input("Respond: ")
+                if  decision == "1":
+                    os.system('cls')
+                    self.tuple_one()
+                    os.system('cls')
+                if  decision == "2":
+                    os.system('cls')
+                    self.tuple_two()
+                    os.system('cls')
+                elif  decision == "0":
+                    os.system('cls')
+                    self.main()
+                    break
+                else:
+                    raise Exception
+            except:
+                os.system('cls')
+                print("Error try again.")
+        
     def tuple_one(self):
         
         

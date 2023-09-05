@@ -1,87 +1,57 @@
 import os
 
 
-
-def tuple():
-    import data.tuple as tuple
-    t = tuple.Tuple_Class() #obiekt klasy test
+class Main():
+    def __init__(self):
+        self.main()
     
-    os.system('cls')
-
-    while True == True:
-        print("*-. Pick one .-*",end="\n\n") 
-        print("1. About ( t.tuple_one() )")
-        print("2. Tuples in loops ( t.tuple_two() )")
-        print("3. Go back",end="\n\n")
+    def main(self):
+        print("*-. What do you want to know today? .-*",end="\n\n") 
+        print("1. Tupels")
+        print("2. Lists")
+        print("3. Collections")
+        print("4. Generators")
+        print("0. Exit",end="\n\n")
         
-        try:
-            decision = input("Respond: ")
-            if  decision == "1":
-                os.system('cls')
-                t.tuple_one()
-                os.system('cls')
-            if  decision == "2":
-                os.system('cls')
-                t.tuple_two()
-                os.system('cls')
-            elif  decision == "3":
-                os.system('cls')
-                main()
-                break
-            else:
-                raise Exception
-        except:
-            os.system('cls')
-            print("Error try again.")
-  
-def list():
-    import data.list as list
-    l = list.List_Class() #obiekt klasy test
+        while True:
+            try:
+                decision = input("Respond: ")
+                if  decision == "1":
+                    self.tuple()
+                    break
+                elif  decision == "2":
+                    self.list()
+                    break
+                elif  decision == "3":
+                    self.collections()
+                    break
+                elif  decision == "4":
+                    self.generators()
+                    break
+                elif  decision == "0":
+                    break
+                else:
+                    raise Exception
+            except:
+                print("Error try again.")
     
-    os.system('cls')
+    def tuple(self):
+        import data.Tuple as Tuple
+        Tuple.Tuple_Class(self.main)
     
-    while True == True:
-        print("*-. Pick one .-*",end="\n\n") 
-        print("1. About")
-        print("2. Go back",end="\n\n")
+    def list(self):
+        import data.List as List
+        List.List_Class(self.main)
         
-        try:
-            decision = input("Respond: ")
-            if  decision == "1":
-                os.system('cls')
-                l.list_one()
-                os.system('cls')
-            elif  decision == "2":
-                os.system('cls')
-                main()
-                break
-            else:
-                raise Exception
-        except:
-            os.system('cls')
-            print("Error try again.")
-                        
-def main():
-    print("*-. What do you want to know today? .-*",end="\n\n") 
-    print("1. Tupels")
-    print("2. Lists")
-    print("9. Exit",end="\n\n")
-    
-    while True == True:
-        try:
-            decision = input("Respond: ")
-            if  decision == "1":
-                tuple()
-                break
-            if  decision == "2":
-                list()
-                break
-            elif  decision == "9":
-                break
-            else:
-                raise Exception
-        except:
-            print("Error try again.")
+    def collections(self):
+        import data.Collections as Col
+        Col.Collections_Class(self.main)
+        
+    def generators(self):
+        import data.Generators as Gen
+        Gen.Generators_Class(self.main)
 
-main()
+
+if __name__ == '__main__':
+    main_app = Main()
 
